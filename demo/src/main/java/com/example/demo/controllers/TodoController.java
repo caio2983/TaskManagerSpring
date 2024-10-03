@@ -6,9 +6,11 @@ import com.example.demo.domain.task.TaskRepository;
 import com.example.demo.domain.task.RequestTask;
 import com.example.demo.domain.task.Task;
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class TodoController {

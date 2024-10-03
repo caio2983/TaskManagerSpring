@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Todo } from '../services/todo.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,13 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'frontend';
+
+  constructor(private TodoService: Todo){
+
+    this.TodoService.getTasks().subscribe((response)=>{
+      
+    console.log("TESTE",response)
+    })
+
+  }
 }
