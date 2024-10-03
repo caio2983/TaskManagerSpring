@@ -46,7 +46,7 @@ public class TodoController {
         return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping
+    @PutMapping("/delete")
     public ResponseEntity deleteTask(@RequestBody @Valid RequestTask data) {
 
         repository.deleteById(data.id());

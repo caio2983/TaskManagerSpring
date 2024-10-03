@@ -17,4 +17,25 @@ constructor(private httpClient: HttpClient){}
 getTasks(): Observable<any> {
     return this.httpClient.get(`${this.url}/get`);
   }
+
+AddTask(task: any): Observable<any> {
+    return this.httpClient.post(`${this.url}`, task, {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+EditTask(task: any): Observable<any> {
+    return this.httpClient.put(`${this.url}`, task, {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+DeleteTask(task: any): Observable<any> {
+    return this.httpClient.put(`${this.url}/delete`, task,{
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+
+  
 }
