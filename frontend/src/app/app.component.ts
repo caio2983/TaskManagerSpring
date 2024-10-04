@@ -5,13 +5,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule,FormsModule,MatCardModule,MatButtonModule],
+  imports: [RouterOutlet,CommonModule,FormsModule,MatCardModule,MatButtonModule,MatInputModule,MatFormFieldModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -24,22 +26,17 @@ export class AppComponent {
 
   constructor(private TodoService: Todo){
 
-    const newTask = {"name":"task-teste-angular","completed":false,"id":"c917b641-d433-4c61-98d3-f84a53ea1b0c"}
-
     this.TodoService.getTasks().subscribe((response)=>{
-    this.tasks = response; 
+    
     this.tasks = this.tasks.map(task => ({ ...task, isEditing: false }));
     console.log("TESTE",response)
     })
 
-    this.TodoService.DeleteTask(newTask).subscribe(response => {
-      console.log('Tarefa deletada com sucesso:', response); 
-    })
-
+   
   }
 
   ngOnInit() {
-    
+    this.showTasks(); 
   }
 
   addTask() {
@@ -74,7 +71,7 @@ export class AppComponent {
   confirmEditTask(task:any) {
      this.TodoService.EditTask(task).subscribe(response => {
        console.log('Tarefa editada com sucesso:', response);
-       this.showTasks(); 
+       task.isEditing = !task.isEditing;
      }, error => {
        console.error('Erro ao editar a tarefa:', error);
      });

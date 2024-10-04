@@ -3,10 +3,6 @@ p {
 
 }
 
-mat-card {
-    margin: 30px;
-}
-
 button {
     width: 100px;
 }
@@ -15,3 +11,59 @@ button {
     border: 2px solid red;
 
 } 
+
+header {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+h2 {
+    font-size: medium;
+}
+
+h1,h2 {
+    margin: 0;
+}
+
+#task-input {
+    display: flex;
+    justify-content: center;
+    padding: 3%;
+    background-color: black;
+    gap:16px;
+}
+
+.add-task {
+    height: 80%;
+    width: 60%;
+}
+
+.button-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+#task-cards {
+    background-color: black;
+
+}
+
+mat-card {
+    margin: 30px;
+    height: 100px;
+ 
+}
+mat-card div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    
+}

@@ -1,23 +1,62 @@
-<h1>Todo</h1>
-<input [(ngModel)]="taskName" />
-<button (click)="addTask()">Adicionar</button>
+<header>
 
-<button (click)="showTasks()">Show tasks</button>
-
-
-<mat-card *ngFor="let task of tasks">
-  <p>Name: {{task.name}}</p>
-  <p>Completed: {{task.completed}}</p>
-
-  <div *ngIf="task.isEditing">
-    <input [(ngModel)]="task.name" />
-    <button mat-button (click)="confirmEditTask(task)">Confirm</button>
-  </div>
+  <h1>Todo</h1>
+  <h2>Task manager app made with Java SpringBoot and Angular</h2>
+</header>
 
 
-  <button mat-button (click)="deleteTask(task)">Delete</button>
-  <button mat-button (click)="editTask(task)">Edit</button>
-</mat-card>
+<section id="task-input">
+
+  <mat-form-field class="add-task">
+    <mat-label>Type a task name</mat-label>
+    <input matInput [(ngModel)]="taskName">
+  </mat-form-field>
+
+  <span class="button-area">
+    <button mat-button (click)="addTask()">Adicionar</button>
+    <button mat-button (click)="showTasks()">Show tasks</button>
+  </span>
+
+</section>
+
+
+<section id="task-cards">
+
+  <mat-card *ngFor="let task of tasks; let i = index">
+
+    <div>
+
+
+
+      <ng-template #notEditing>
+        <p>Name: {{task.name}}</p>
+        <p>Completed: {{task.completed}}</p>
+        <span class="button-area">
+          <button mat-button (click)="deleteTask(task)">Delete</button>
+          <button mat-button (click)="editTask(task)">Edit</button>
+        </span>
+      </ng-template>
+
+      <div *ngIf="task.isEditing; else notEditing">
+
+        <mat-form-field class="add-task">
+          <mat-label>Type a new task name</mat-label>
+          <input matInput [(ngModel)]="task.name">
+        </mat-form-field>
+        <p>Completed: {{task.completed}}</p>
+
+        <span class="button-area">
+          <button mat-button (click)="confirmEditTask(task)">Confirm</button>
+          <button mat-button (click)="editTask(task)">Cancel</button>
+        </span>
+
+      </div>
+
+    </div>
+
+  </mat-card>
+
+</section>
 
 
 
