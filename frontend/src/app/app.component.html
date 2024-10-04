@@ -4,9 +4,30 @@
 
 <button (click)="showTasks()">Show tasks</button>
 
-<div *ngFor="let task of tasks">
+
+<mat-card *ngFor="let task of tasks">
+  <p>Name: {{task.name}}</p>
+  <p>Completed: {{task.completed}}</p>
+
+  <div *ngIf="task.isEditing">
+    <input [(ngModel)]="task.name" />
+    <button mat-button (click)="confirmEditTask(task)">Confirm</button>
+  </div>
+
+
+  <button mat-button (click)="deleteTask(task)">Delete</button>
+  <button mat-button (click)="editTask(task)">Edit</button>
+</mat-card>
+
+
+
+
+
+
+
+<!-- <div *ngFor="let task of tasks">
   Name: {{task.name}}
   Completed: {{task.completed}}
 
   <button (click)="deleteTask(task)">Delete</button>
-</div>
+</div> -->
