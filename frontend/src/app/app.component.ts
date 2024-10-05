@@ -7,13 +7,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule,FormsModule,MatCardModule,MatButtonModule,MatInputModule,MatFormFieldModule],
+  imports: [RouterOutlet,CommonModule,FormsModule,MatCardModule,MatButtonModule,MatInputModule,MatFormFieldModule,MatCheckboxModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -34,6 +35,8 @@ export class AppComponent {
 
    
   }
+
+ 
 
   ngOnInit() {
     this.showTasks(); 
@@ -75,5 +78,18 @@ export class AppComponent {
      }, error => {
        console.error('Erro ao editar a tarefa:', error);
      });
+  }
+
+  updateCheckbox(task:any) {
+    task.completed = !task.completed;
+    
+    this.TodoService.EditTask(task).subscribe(response => {
+      console.log('Tarefa editada com sucesso:', response);
+  
+    }, error => {
+      console.error('Erro ao editar a tarefa:', error);
+    });
+   
+
   }
 }

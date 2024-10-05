@@ -29,8 +29,12 @@
 
 
       <ng-template #notEditing>
-        <p>Name: {{task.name}}</p>
-        <p>Completed: {{task.completed}}</p>
+        <p id="task-name">Name: {{task.name}}</p>
+        <mat-checkbox (change)="updateCheckbox(task)" [checked]="task.completed">
+          Completed
+        </mat-checkbox>
+
+
         <span class="button-area">
           <button mat-button (click)="deleteTask(task)">Delete</button>
           <button mat-button (click)="editTask(task)">Edit</button>
@@ -39,7 +43,7 @@
 
       <div *ngIf="task.isEditing; else notEditing">
 
-        <mat-form-field class="add-task">
+        <mat-form-field class="add-task editing-input">
           <mat-label>Type a new task name</mat-label>
           <input matInput [(ngModel)]="task.name">
         </mat-form-field>

@@ -1,0 +1,21 @@
+
+@use '@angular/material' as mat;
+@include mat.core();
+@include mat.checkbox-theme($theme);
+
+
+$theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$cyan-palette,
+  ),
+  typography: (
+    brand-family: 'Comic Sans',
+    bold-weight: 900
+  ),
+  density: (
+    scale: -1
+  )
+));
+
+
