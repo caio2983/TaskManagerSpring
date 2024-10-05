@@ -1,25 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
 
-
-@use '@angular/material' as mat;
-
-@include mat.core();
-
-$my-theme: mat.define-theme((
-  color: (
-    theme-type: dark,
-    primary: mat.$green-palette,
-  ),
-));
-
-html {
-
-    @include mat.checkbox-theme($my-theme);
-
-  }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 
 * {
     margin: 0;
