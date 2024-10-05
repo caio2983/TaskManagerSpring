@@ -18,9 +18,10 @@
 
 <h2>Technologies ⚙️</h2>
 
+<h3>Frontend 🎨</h3>
 <p>Built with Angular v18.1.2. I used Angular Material to include cool UI stuff.Little icons are from FontsAwesome</p>
 
-<h3>Back end</h3>
+<h3>Backend 🗄️</h3>
 <p>Server built with Java Spring Boot, and DataBase built using PostGreSQL . Used Lombok to reduce boilerplate code  </p>
 
 <h2>🚀 Getting Started</h2>
