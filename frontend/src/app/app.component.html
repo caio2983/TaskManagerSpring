@@ -15,7 +15,7 @@
 
 
   <span class="button-area">
-    <button mat-button (click)="addTask()" class="task-input-buttons">
+    <button mat-button (click)="addTask()" class="button-pair">
       <mat-icon>
         <i class="fa-solid fa-plus"></i>
       </mat-icon>
@@ -38,18 +38,17 @@
       <mat-tab label="All tasks">
         <mat-card *ngFor="let task of tasks; let i = index">
 
-          <div [ngClass]="{'completed-task': task.completed}">
+          <ng-template #notEditing>
+
+            <div [ngClass]="{'completed-task': task.completed}">
 
 
 
-            <ng-template #notEditing>
-              <p id="task-name">Name: {{task.name}}</p>
+              <p id="task-name"> {{task.name}}</p>
+
               <mat-checkbox (change)="updateCheckbox(task)" [checked]="task.completed">
                 Complete
               </mat-checkbox>
-
-
-
 
               <span class="button-area">
                 <button mat-button (click)="deleteTask(task)">
@@ -61,26 +60,30 @@
                   <mat-icon><i class="fa-solid fa-pen-to-square"></i></mat-icon>
                 </button>
               </span>
-            </ng-template>
-
-            <div *ngIf="task.isEditing; else notEditing">
-
-              <mat-form-field class="add-task editing-input">
-                <mat-label>Type a new task name</mat-label>
-                <input matInput [(ngModel)]="task.name">
-              </mat-form-field>
-              <mat-checkbox [disabled]=true [checked]="task.completed">
-                Complete
-              </mat-checkbox>
 
 
 
-              <span class="button-area">
-                <button mat-button (click)="confirmEditTask(task)">Confirm</button>
-                <button mat-button (click)="editTask(task)">Cancel</button>
-              </span>
 
             </div>
+
+          </ng-template>
+
+          <div *ngIf="task.isEditing; else notEditing" [ngClass]="{'completed-task': task.completed}">
+
+            <mat-form-field class="add-task editing-input">
+              <mat-label>Type a new task name</mat-label>
+              <input matInput [(ngModel)]="task.name">
+            </mat-form-field>
+            <mat-checkbox [disabled]=true [checked]="task.completed">
+              Complete
+            </mat-checkbox>
+
+
+
+            <span class="button-area">
+              <button mat-button (click)="confirmEditTask(task)">Confirm</button>
+              <button mat-button (click)="editTask(task)">Cancel</button>
+            </span>
 
           </div>
 
