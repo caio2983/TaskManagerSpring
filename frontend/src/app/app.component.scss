@@ -53,6 +53,7 @@ h1,h2 {
 
 #task-cards {
     background-color: black;
+    overflow: hidden;
 
 }
 
@@ -80,3 +81,4 @@ mat-card div {
 #task-name {
     width: 30%;
 }
+

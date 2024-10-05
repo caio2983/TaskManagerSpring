@@ -11,6 +11,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTabsModule} from '@angular/material/tabs';
 
 import { CompletePipePipe } from './complete-pipe.pipe';
+import { IncompletePipe } from './incomplete.pipe';
 
 
 
@@ -18,7 +19,7 @@ import { CompletePipePipe } from './complete-pipe.pipe';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule,FormsModule,MatCardModule,MatButtonModule,MatInputModule,MatFormFieldModule,MatCheckboxModule,MatTabsModule,CompletePipePipe],
+  imports: [RouterOutlet,CommonModule,FormsModule,MatCardModule,MatButtonModule,MatInputModule,MatFormFieldModule,MatCheckboxModule,MatTabsModule,CompletePipePipe,IncompletePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
