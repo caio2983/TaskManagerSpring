@@ -24,7 +24,7 @@
 
   <mat-card *ngFor="let task of tasks; let i = index">
 
-    <div>
+    <div [ngClass]="{'completed-task': task.completed}">
 
 
 
