@@ -8,13 +8,17 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTabsModule} from '@angular/material/tabs';
+
+import { CompletePipePipe } from './complete-pipe.pipe';
+
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule,FormsModule,MatCardModule,MatButtonModule,MatInputModule,MatFormFieldModule,MatCheckboxModule],
+  imports: [RouterOutlet,CommonModule,FormsModule,MatCardModule,MatButtonModule,MatInputModule,MatFormFieldModule,MatCheckboxModule,MatTabsModule,CompletePipePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -23,6 +27,8 @@ export class AppComponent {
   taskName: String = '';
   tasks! : any[];
   isEditing : boolean = false;
+
+
 
 
   constructor(private TodoService: Todo){
