@@ -16,7 +16,7 @@
 
 </p>
 
-<h2>Technologies</h2>
+<h2>Technologies ⚙️</h2>
 
 <p>Built with Angular v18.1.2. I used Angular Material to include cool UI stuff.Little icons are from FontsAwesome</p>
 
