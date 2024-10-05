@@ -9,7 +9,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTabsModule} from '@angular/material/tabs';
-
+import {MatIconModule} from '@angular/material/icon';
 import { CompletePipePipe } from './complete-pipe.pipe';
 import { IncompletePipe } from './incomplete.pipe';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -20,7 +20,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule,FormsModule,MatCardModule,MatButtonModule,MatInputModule,MatFormFieldModule,MatCheckboxModule,MatTabsModule,CompletePipePipe,IncompletePipe,MatProgressSpinnerModule],
+  imports: [RouterOutlet,CommonModule,FormsModule,MatCardModule,MatButtonModule,MatInputModule,MatFormFieldModule,MatCheckboxModule,MatTabsModule,CompletePipePipe,IncompletePipe,MatProgressSpinnerModule,MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -15,8 +15,16 @@
 
 
   <span class="button-area">
-    <button mat-button (click)="addTask()">Add</button>
-    <button mat-button (click)="showTasks()">Show tasks</button>
+    <button mat-button (click)="addTask()" class="task-input-buttons">
+      <mat-icon>
+        <i class="fa-solid fa-plus"></i>
+      </mat-icon>
+    </button>
+    <button mat-button (click)="showTasks()" class="task-input-buttons">
+      <mat-icon>
+        <i class="fa-solid fa-list-ul"></i>
+      </mat-icon>
+    </button>
   </span>
 
 </section>
@@ -45,9 +53,17 @@
               </mat-checkbox>
 
 
+
+
               <span class="button-area">
-                <button mat-button (click)="deleteTask(task)">Delete</button>
-                <button mat-button (click)="editTask(task)">Edit</button>
+                <button mat-button (click)="deleteTask(task)">
+                  <mat-icon>
+                    <i class="fa-solid fa-trash-can"></i>
+                  </mat-icon>
+                </button>
+                <button mat-button (click)="editTask(task)">
+                  <mat-icon><i class="fa-solid fa-pen-to-square"></i></mat-icon>
+                </button>
               </span>
             </ng-template>
 
@@ -165,20 +181,3 @@
 
   </ng-template>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div *ngFor="let task of tasks">
-  Name: {{task.name}}
-  Completed: {{task.completed}}
-
-  <button (click)="deleteTask(task)">Delete</button>
-</div> -->
