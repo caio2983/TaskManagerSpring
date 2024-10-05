@@ -54,6 +54,7 @@ h1,h2 {
     background-color: black;
     overflow: hidden;
 
+
 }
 
 mat-card {
@@ -81,3 +82,7 @@ mat-card div {
     width: 30%;
 }
 
+#task-cards mat-spinner {
+  margin: 0 auto;
+  
+}

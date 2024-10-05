@@ -12,6 +12,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 
 import { CompletePipePipe } from './complete-pipe.pipe';
 import { IncompletePipe } from './incomplete.pipe';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -19,7 +20,7 @@ import { IncompletePipe } from './incomplete.pipe';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule,FormsModule,MatCardModule,MatButtonModule,MatInputModule,MatFormFieldModule,MatCheckboxModule,MatTabsModule,CompletePipePipe,IncompletePipe],
+  imports: [RouterOutlet,CommonModule,FormsModule,MatCardModule,MatButtonModule,MatInputModule,MatFormFieldModule,MatCheckboxModule,MatTabsModule,CompletePipePipe,IncompletePipe,MatProgressSpinnerModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -28,6 +29,7 @@ export class AppComponent {
   taskName: String = '';
   tasks! : any[];
   isEditing : boolean = false;
+  isLoading: boolean = true;
 
 
 
@@ -37,16 +39,16 @@ export class AppComponent {
     this.TodoService.getTasks().subscribe((response)=>{
     
     this.tasks = this.tasks.map(task => ({ ...task, isEditing: false }));
-    console.log("TESTE",response)
-    })
 
-   
+    })
   }
 
  
 
   ngOnInit() {
     this.showTasks(); 
+   
+    
   }
 
   addTask() {
@@ -59,9 +61,12 @@ export class AppComponent {
   }
 
   showTasks() {
+
     this.TodoService.getTasks().subscribe((response)=>{
+      
       this.tasks = response; 
       console.log("SHOW ALL TASKS",response)
+      this.isLoading = false;
       })
   }
 
