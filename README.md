@@ -3,7 +3,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular Badge" />
-  <img src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white" alt="Spring Badge">
+  <img src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white" alt="Spring Badge" />
+  <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java Badge" />
 </p>
 
 <p align="center" display="flex">
@@ -22,7 +23,7 @@
 <p>Built with Angular v18.1.2. I used Angular Material to include cool UI stuff.Little icons are from FontsAwesome</p>
 
 <h3>Backend 🗄️</h3>
-<p>Server built with Java Spring Boot, and DataBase built using PostGreSQL . Used Lombok to reduce boilerplate code  </p>
+<p>Server built with Java Spring Boot, and DataBase built with PostGreSQL . Used Lombok to reduce boilerplate code  </p>
 
 <h2>🚀 Getting Started</h2>
 
@@ -33,6 +34,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+<p>cd frontend</p>
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
